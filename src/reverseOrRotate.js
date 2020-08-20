@@ -35,7 +35,7 @@ const revrot = (str, size) => {
     for (let i = 0; i < remainder.length; i++) {
       string += remainder[i];
       counter++;
-      if (counter === 5) {
+      if (counter === size) {
         if (getIfSumOfCubesIsEven(string)) {
           chunks.push(string.split('').reverse().join(''));
         } else {

@@ -1,10 +1,15 @@
 {
-    "parserOptions": {
-        "ecmaVersion": 2019,
-        "sourceType": "module"
-    },
-    "extends": ["eslint:recommended"],
-    "env": {
-        "browser": true
-    }
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "no-unused-vars": "warn"
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true
+  }
 }

@@ -1,4 +1,4 @@
-const { addTwoNumbers } = require('../AddTwoNumbers');
+const { addTwoNumbers } = require('../leetCode/AddTwoNumbers');
 
 const l1 = {
   val: 4,

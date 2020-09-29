@@ -1,4 +1,4 @@
-const { findMedianSortedArrays } = require('../bytebybyte/recursionOne');
+const { findMedianSortedArrays } = require('../medianSorted');
 
 it('returns the right thing', () => {
   expect(findMedianSortedArrays([1, 3], [2])).toBe(2);

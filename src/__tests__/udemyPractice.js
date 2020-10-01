@@ -3,6 +3,8 @@ const {
   areThereDuplicates,
   averagePair,
   isSubsequence,
+  maxSubarraySum,
+  minSubArrayLen,
 } = require('../practiceProblems/udemyPractice');
 
 describe('same frequency works', () => {
@@ -56,5 +58,32 @@ describe('isSubsequence works', () => {
     ${'abc'}   | ${'cba'}         | ${false}
   `(`returns correct answer`, ({ input1, input2, result }) => {
     expect(isSubsequence(input1, input2)).toBe(result);
+  });
+});
+
+describe('maxSubarraySum works', () => {
+  test.each`
+    input1                             | input 2 | result
+    ${[100, 200, 300, 400]}            | ${2}    | ${700}
+    ${[1, 4, 2, 10, 23, 3, 1, 0, 20]}  | ${4}    | ${39}
+    ${[-3, 4, 0, -2, 6, -1]}           | ${2}    | ${5}
+    ${[3, -2, 7, -4, 1, -1, 4, -2, 1]} | ${2}    | ${5}
+    ${[2, 3]}                          | ${3}    | ${null}
+  `('returns the correct answer', ({ input1, input2, result }) => {
+    expect(maxSubarraySum(input1, input2)).toBe(result);
+  });
+});
+describe('minSubarrayLen works', () => {
+  test.each`
+    input1                                    | input 2 | result
+    ${[2, 3, 1, 2, 4, 3]}                     | ${7}    | ${2}
+    ${[2, 1, 6, 5, 4]}                        | ${9}    | ${2}
+    ${[3, 1, 7, 11, 2, 9, 8, 21, 62, 33, 19]} | ${52}   | ${1}
+    ${[1, 4, 16, 22, 5, 7, 8, 9, 10]}         | ${39}   | ${3}
+    ${[1, 4, 16, 22, 5, 7, 8, 9, 10]}         | ${55}   | ${5}
+    ${[4, 3, 3, 8, 1, 2, 3]}                  | ${11}   | ${2}
+    ${[1, 4, 16, 22, 5, 7, 8, 9, 10]}         | ${95}   | ${0}
+  `('returns the correct answer', ({ input1, input2, result }) => {
+    expect(minSubArrayLen(input1, input2)).toBe(result);
   });
 });
